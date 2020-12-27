@@ -31,7 +31,7 @@ void getWifiConnection() {
 
 void sendToAPI(double data) {
 //    String local_api = "http://192.168.0.32:8080/api/v1/remote-sensors/temperature";
-    String api = "http://192.168.0.32:8080/api/v1/remote-sensors/temperature";
+    String api = "https://my-remote-sensors.herokuapp.com/api/v1/remote-sensors/temperature";
     HTTPClient client;
 
     client.begin(api);
