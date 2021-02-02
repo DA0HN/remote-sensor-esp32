@@ -22,7 +22,7 @@ void loop() {
         Serial.println("Não há conexão WiFi");
     }
     // TODO: usar timer no lugar do delay
-    delay(15000);
+    delay(8000);
 }
 
 
