@@ -13,23 +13,19 @@ boolean isConnected() {
     return WiFiClass::status() == WL_CONNECTED;
 }
 
-void initWifi() {
+void connect() {
     WiFi.begin(ssid, password);
-    getWifiConnection();
-    Serial.println("..::Conectado com sucesso!::..");
-    Serial.println("Endereço IP: " + String(WiFi.localIP()));
-}
-
-void getWifiConnection() {
     Serial.print("Conectando ao WiFi " + String(ssid));
     while (WiFiClass::status() != WL_CONNECTED) {
         Serial.print(".");
         delay(500);
     }
     Serial.println();
+    Serial.println("..::Conectado com sucesso!::..");
+    Serial.println("Endereço IP: " + String(WiFi.localIP()));
 }
 
-void sendToAPI(double data) {
+void sendData(double data) {
 //    String api = "http://192.168.0.32:5000/api/v1/remote-sensors/temperature";
     String api = "https://my-remote-sensors.herokuapp.com/api/v1/remote-sensors/temperature";
     HTTPClient client;

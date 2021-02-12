@@ -5,12 +5,22 @@
 #ifndef REMOTE_SENSOR_CPP_SERVICE_H
 #define REMOTE_SENSOR_CPP_SERVICE_H
 
-void initWifi();
 
+/**
+ * Checa se o microcontrolador está conectado com o WiFi
+ * @return true se houver conexão WiFi false caso contrário
+ */
 boolean isConnected();
 
-void getWifiConnection();
+/**
+ * Inicia a conexão WiFi
+ */
+void connect();
 
-void sendToAPI(double data);
+/**
+ * Envia a temperatura coletada para a API
+ * @param data
+ */
+void sendData(double data);
 
 #endif //REMOTE_SENSOR_CPP_SERVICE_H

@@ -5,8 +5,8 @@
 
 void setup() {
     Serial.begin(115200);
-    setupADC();
-    initWifi();
+    setupAnalogChannel();
+    connect();
 }
 
 void loop() {
@@ -16,7 +16,7 @@ void loop() {
     Serial.println(temperatura);
 
     if(isConnected()) {
-        sendToAPI(temperatura);
+        sendData(temperatura);
     }
     else {
         Serial.println("Não há conexão WiFi");
